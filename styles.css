@@ -1,0 +1,54 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f6f8;
+  --panel: #ffffff;
+  --ink: #1f2933;
+  --muted: #66788a;
+  --border: #d7dde4;
+  --brand: #2f5d9a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); }
+.app-shell { max-width: 1150px; margin: 0 auto; padding: 1.25rem; }
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+h1, h2, h3 { margin: 0 0 0.75rem; font-weight: 600; }
+.panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04); }
+.centered { max-width: 500px; margin: 4rem auto; text-align: center; }
+.entry-actions { display: flex; gap: 0.8rem; justify-content: center; margin-top: 1rem; }
+.muted { color: var(--muted); }
+.layout { display: grid; grid-template-columns: 290px 1fr; gap: 1rem; }
+.sidebar { min-height: 640px; }
+.sidebar-header { display: flex; justify-content: space-between; align-items: center; }
+.form-grid { display: grid; gap: 0.75rem; }
+.two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.two-col h2, .holiday-group, .actions, .calendar-wrap, .totals { grid-column: 1 / -1; }
+label { display: grid; gap: 0.35rem; font-size: 0.92rem; color: var(--muted); }
+input, select, button { font: inherit; }
+input, select { border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 0.6rem; background: #fff; }
+button { border: 1px solid transparent; background: var(--brand); color: #fff; border-radius: 8px; padding: 0.5rem 0.8rem; cursor: pointer; font-weight: 600; }
+button.secondary { background: #eef2f7; color: var(--ink); border-color: var(--border); }
+button.ghost { background: transparent; color: var(--ink); border-color: var(--border); }
+button.full { width: 100%; text-align: left; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+.saved-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.saved-item { border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem; background: #fbfcfd; }
+.saved-item button { margin-right: 0.4rem; margin-top: 0.4rem; }
+.calendar-output { border: 1px solid var(--border); border-radius: 8px; max-height: 520px; overflow: auto; background: #fff; }
+.day-row { display: grid; grid-template-columns: 145px 1fr; align-items: center; border-bottom: 1px solid #eef1f4; }
+.day-row:last-child { border-bottom: none; }
+.day-date { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0.6rem; }
+.day-owner { color: #fff; padding: 0.5rem 0.6rem; font-weight: 500; }
+.holiday-group { position: relative; }
+.holiday-dropdown { position: absolute; z-index: 10; top: calc(100% + 6px); left: 0; width: 100%; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08); }
+.holiday-dropdown label { display: flex; align-items: center; gap: 0.5rem; color: var(--ink); }
+.totals { padding: 0.55rem 0.75rem; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.7rem; }
+.month-grid { padding: 0.8rem; border-bottom: 1px solid #eef1f4; }
+.month-grid h4 { margin: 0 0 0.5rem; }
+.weekdays, .days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.25rem; }
+.weekdays div { font-size: 0.75rem; color: var(--muted); text-align: center; }
+.day-cell { min-height: 46px; border: 1px solid var(--border); border-radius: 6px; padding: 0.25rem; font-size: 0.78rem; cursor: pointer; }
+.day-cell.empty { border: none; cursor: default; }
+.day-cell .n { display: block; color: #344; margin-bottom: 0.2rem; }
+.message { min-height: 1rem; color: #8f2f2f; }
+.hidden { display: none !important; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .two-col { grid-template-columns: 1fr; } }
